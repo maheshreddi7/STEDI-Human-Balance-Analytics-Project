@@ -26,8 +26,8 @@ DEFAULT_DATA_QUALITY_RULESET = """
     ]
 """
 
-# Script generated for node accelerometer_landing
-accelerometer_landing_node1766556649463 = glueContext.create_dynamic_frame.from_catalog(database="stedi", table_name="accelerometer_landing", transformation_ctx="accelerometer_landing_node1766556649463")
+# Script generated for node accelerometer_trusted
+accelerometer_trusted_node1766556649463 = glueContext.create_dynamic_frame.from_catalog(database="stedi", table_name="accelerometer_trusted", transformation_ctx="accelerometer_trusted_node1766556649463")
 
 # Script generated for node customer_trusted
 customer_trusted_node1766556679449 = glueContext.create_dynamic_frame.from_catalog(database="stedi", table_name="customer_trusted", transformation_ctx="customer_trusted_node1766556679449")
@@ -37,7 +37,7 @@ SqlQuery0 = '''
 select *  from a join c on a.user = c.email
 
 '''
-joins_node1766559234751 = sparkSqlQuery(glueContext, query = SqlQuery0, mapping = {"a":accelerometer_landing_node1766556649463, "c":customer_trusted_node1766556679449}, transformation_ctx = "joins_node1766559234751")
+joins_node1766559234751 = sparkSqlQuery(glueContext, query = SqlQuery0, mapping = {"a":accelerometer_trusted_node1766556649463, "c":customer_trusted_node1766556679449}, transformation_ctx = "joins_node1766559234751")
 
 # Script generated for node Drop fields & drop duplicates
 SqlQuery1 = '''
